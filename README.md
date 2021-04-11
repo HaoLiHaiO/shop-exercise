@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+## Build Website according to Wireframe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Favicon changed. New icon is a cool "R" like React.
+- Title of the page has been updated: "Super Cool Retro Game Shop!"
+- No script message changed for fun: "Oh no... It looks like Javascript can't be run in your browser! Please enable Javascript!"
+- The web app is almost fully accessible (color schemes are all AAA, font sizes, etc.) 🎉
+- The web app is FULLY responsive. It should work on absolutely all devices. 🎉
+- The web app is compatible with all browsers.
+- Lighthouse score for desktop view: Perf 94, Accessibility 100, Best practices 93, SEO 100
+- Lighthouse score for mobile view: Perf 64 (images were picked up randomly and cannot be optimized), Accessibility 100, Best practices 93
 
-## Available Scripts
+## Product Page
 
-In the project directory, you can run:
+### Products
 
-### `yarn start`
+- Products are displayed on the right side according to wireframe.
+- Products are placed in column in individual cards for better UI / UX
+- Smooth card angles (radius)
+- When hovering on the cards, they increase in size for a better detailed view (bonus)
+- They can be added to the right side component (ShopCart).
+- I did not use Material UI or Bootstrap and styled everything from scratch myself (to get best accessibility results). I still learnt how to use Material UI though.
+- The dataset "products.ts" was renamed to "data.ts" because it was confusing with the other components' names. I changed the entire dataset anyway except the type { picture: string; price: number; name: string }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Adding products to the ShopCart
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Add to cart button. Same style as all other buttons on the website.
+- Hover effect with smooth transitions. Hover target color is also AAA.
+- useContext was used for storing items.
+- All items are listed in the ShopCart as well as the quantity and the price (for the quantity, a counter was added in the context provider)
+- Button that links to CheckoutForm. (an implementation with useHistory / onNavigate was made for fun too and is available in the comments in the code 😄)
 
-### `yarn test`
+### Order page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A checkout form with name, address, etc. and the list of items under.
+- Submit logs a message order was successful in the console. there is also a home button to conveniently return to the main page.
+- A remove product from cart functionality was made for fun and is available in the comments in the code. 😄
+- All buttons are the same.
 
-### `yarn build`
+## Extras
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The web app is FULLY RESPONSIVE. 🎉
+- Detail view of item on hover 🎉

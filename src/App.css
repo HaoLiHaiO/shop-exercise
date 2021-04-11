@@ -1,38 +1,319 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
 .App {
+  font-family: sans-serif;
   text-align: center;
+  background-color: #1b365d;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.itemListPage {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.itemlist {
+  width: 48%;
+  padding-top: 2%;
+
+  padding-left: 1%;
 }
 
-.App-link {
-  color: #61dafb;
+.item-wrapper {
+  transition: all 0.2s ease-in-out;
+  margin-top: 2%;
+  border: 1px solid black;
+  background-color: #ffffff;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.item-wrapper:hover {
+  transform: scale(1.1);
+  border: none;
+}
+
+.item-wrapper > * {
+  padding: 1%;
+}
+
+.item-name,
+.price {
+  font-weight: 600;
+}
+
+/* BUTTON STYLING FOR THE ENTIRE APP */
+
+button {
+  background-color: #1d4289;
+  border-radius: 5px;
+  margin: 1rem;
+  height: 2rem;
+  width: 30%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:visited {
+  background-color: #1d4289;
+}
+
+a,
+a:visited {
+  height: 2rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: 0.7s ease-in-out;
+}
+
+button:hover {
+  background-color: #5d3754;
+  transition: 0.7s ease-in-out;
+}
+
+/* BEGINNING OF CART COMPONENT */
+
+.item-container {
+  width: 52%;
+  padding-left: 1%;
+  font-weight: 600;
+  padding-top: 2%;
+  height: 75%;
+  border-radius: 20px;
+
+  background-color: white;
+}
+
+.itemdata-wrapper {
+  border-bottom: 1px solid black;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+#cart {
+  text-align: left;
+  padding-left: 2%;
+}
+
+.total {
+  margin: 5%;
+  text-align: right;
+}
+
+/* CHECKOUT FORM */
+
+.checkoutform {
+  background-color: #1b365d;
+  color: #ffffff;
+}
+
+#toptitle {
+  padding-top: 1%;
+}
+
+input {
+  width: 20%;
+}
+
+form {
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.formtitle {
+  border-bottom: 1px solid #ffffff;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.items-checkout {
+  margin: 2%;
+}
+
+/**
+* MEDIA QUERIES
+*/
+
+/* Going from bigger to smaller devices since we started with desktop screens */
+
+/* TABLETS */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .itemListPage {
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .itemListPage > * {
+    width: 100vw;
+  }
+
+  .itemlist {
+    margin-bottom: 2%;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  input {
+    width: 40%;
+    margin-top: 3%;
+  }
+
+  .itemdata-wrapper {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  button {
+    width: 50%;
+  }
+
+  input {
+    width: 40%;
+    margin-top: 3%;
+  }
+
+  .itemdata-wrapper {
+    margin-top: 5%;
+  }
+}
+
+/* IPHONE X PORTRAIT */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .itemlist {
+    margin-bottom: 1%;
+  }
+
+  .itemListPage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .itemListPage > * {
+    width: 100vw;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  input {
+    width: 40%;
+    margin-top: 3%;
+  }
+
+  .itemdata-wrapper {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  * {
+    font-size: 12px;
+  }
+
+  .itemlist {
+    margin-bottom: 1%;
+  }
+}
+
+/* IPHONE 6 7 8 PORTRAIT AND LANDSCAPE */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  * {
+    font-size: 18px;
+  }
+
+  .itemlist {
+    margin-bottom: 1%;
+  }
+
+  .itemListPage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .itemListPage > * {
+    width: 100vw;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  input {
+    width: 40%;
+    margin-top: 3%;
+  }
+
+  .itemdata-wrapper {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  * {
+    font-size: 12px;
+  }
+
+  .itemlist {
+    margin-bottom: 2%;
+  }
+
+  .itemListPage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .itemListPage > * {
+    width: 100vw;
+  }
+}
+
+/* FIX DISPLAY BUG ON GOOGLE PIXEL 2  */
+/* Not to self:" find exact pixel ratio of Pixel 2 for webkit...  */
+
+/* Landscape */
+@media screen and (device-width: 731px) and (orientation: landscape) {
+  * {
+    font-size: 12px;
+  }
+}
+
+/* FIX ANOTHER DISPLAY BUG, ON PIXEL 2 XL THIS TIME...  */
+
+@media screen and (device-width: 823px) and (orientation: landscape) {
+  * {
+    font-size: 14px;
+  }
+}
+
+/* SPECIAL for GALAXY FOLD WHEN SMALLEST SCREEN SIZE USED */
+
+@media screen and (device-width: 280px) and (orientation: portrait) {
+  * {
+    font-size: 9px;
+  }
+
+  .itemlist {
+    margin-bottom: 2%;
+  }
+
+  .itemListPage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .itemListPage > * {
+    width: 100vw;
   }
 }
